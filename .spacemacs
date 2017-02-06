@@ -56,7 +56,7 @@ values."
                        :password "123456")))
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
-                    ;;  auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
      ;; better-defaults
      emacs-lisp
@@ -67,13 +67,12 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      (spell-checking :variables
-                     ;; spell-checking-enable-auto-dictionary t
+                     spell-checking-enable-auto-dictionary t
                      spell-checking-enable-by-default t
-                     ;; enable-flyspell-auto-completion t
-                     ;; ispell-change-dictionary "american"
-                     ;; enable-flyspell-auto-completion t
-                     ispell-local-dictionary "en_US"
-                     ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))
+                     ;ispell-change-dictionary "american"
+                     enable-flyspell-auto-completion t
+                     ;ispell-local-dictionary "en_US"
+                     ;ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))
                      company-ispell-dictionary "/usr/share/dict/words")
      ;; syntax-checking
      ;; version-control
