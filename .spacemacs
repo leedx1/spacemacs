@@ -43,6 +43,17 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
+     (erc :variables
+                    erc-server-list
+                    '(("irc.freenode.net"
+                       :port "6697"
+                       :ssl nil 
+                       :nick "oliver"
+                       :password "123456")
+                      ("irc.myworkirc.net"
+                       :port "1234"
+                       :nick "oliver"
+                       :password "123456")))
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
                     ;;  auto-completion-enable-snippets-in-popup t
@@ -58,9 +69,9 @@ values."
      (spell-checking :variables
                      ;; spell-checking-enable-auto-dictionary t
                      spell-checking-enable-by-default t
-                     enable-flyspell-auto-completion t
+                     ;; enable-flyspell-auto-completion t
                      ;; ispell-change-dictionary "american"
-                     enable-flyspell-auto-completion t
+                     ;; enable-flyspell-auto-completion t
                      ispell-local-dictionary "en_US"
                      ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))
                      company-ispell-dictionary "/usr/share/dict/words")
