@@ -328,7 +328,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
    (global-company-mode)
    ;;(define-key global-map (kbd "f5") 'company-ispell)
-   (global-set-key (kbd "<f5>") 'company-ispell)
+   (global-set-key (kbd "<f8>") 'company-ispell)
+   (global-set-key (kbd "<f5>") 'evil-escape)
+   (global-set-key (kbd "<f6>") 'semantic-ia-fast-jump)
   )
 
 (custom-set-faces
