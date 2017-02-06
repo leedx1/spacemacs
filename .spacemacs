@@ -43,21 +43,29 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     (auto-completion :variables auto-completion-enable-snippets-in-popup t
+     (auto-completion :variables
                       auto-completion-enable-help-tooltip t
+                    ;;  auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
      ;; better-defaults
      emacs-lisp
-     ;; git
+     git
      ;; markdown
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     spell-checking
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     (spell-checking :variables
+                     ;; spell-checking-enable-auto-dictionary t
+                     spell-checking-enable-by-default t
+                     enable-flyspell-auto-completion t
+                     ;; ispell-change-dictionary "american"
+                     enable-flyspell-auto-completion t
+                     ispell-local-dictionary "en_US"
+                     ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))
+                     company-ispell-dictionary "/usr/share/dict/words")
      ;; syntax-checking
      ;; version-control
-     ;; company
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -308,7 +316,9 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (global-company-mode)
+   (global-company-mode)
+   ;;(define-key global-map (kbd "f5") 'company-ispell)
+   (global-set-key (kbd "<f5>") 'company-ispell)
   )
 
 (custom-set-faces
