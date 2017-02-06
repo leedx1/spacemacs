@@ -35,7 +35,6 @@ values."
      (javascript :variables
                  tern-command '("node" "/usr/local/bin/tern")
                  javascript-disable-tern-port-files nil)
-     semantic
      (c-c++ :variables c-c++-enable-clang-support t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -54,9 +53,10 @@ values."
                        :port "1234"
                        :nick "oliver"
                        :password "123456")))
+     semantic
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
-                      auto-completion-enable-snippets-in-popup t
+                      ;;auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
      ;; better-defaults
      emacs-lisp
@@ -66,14 +66,14 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     (spell-checking :variables
-                     spell-checking-enable-auto-dictionary t
-                     spell-checking-enable-by-default t
-                     ;ispell-change-dictionary "american"
-                     enable-flyspell-auto-completion t
-                     ;ispell-local-dictionary "en_US"
-                     ;ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))
-                     company-ispell-dictionary "/usr/share/dict/words")
+     ;; (spell-checking :variables
+     ;;                 spell-checking-enable-auto-dictionary t
+     ;;                 spell-checking-enable-by-default t
+     ;;                 ;ispell-change-dictionary "american"
+     ;;                 enable-flyspell-auto-completion t
+     ;;                 ;ispell-local-dictionary "en_US"
+     ;;                 ;ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))
+     ;;                 company-ispell-dictionary "/usr/share/dict/words")
      ;; syntax-checking
      ;; version-control
      )
