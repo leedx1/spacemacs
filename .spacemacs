@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     python
      html
      (javascript :variables
                  tern-command '("node" "/usr/local/bin/tern")
@@ -58,7 +59,7 @@ values."
                       auto-completion-enable-help-tooltip t
                       ;;auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
-     ;; better-defaults
+     better-defaults
      emacs-lisp
      git
      ;; markdown
@@ -74,7 +75,7 @@ values."
      ;;                 ;ispell-local-dictionary "en_US"
      ;;                 ;ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))
      ;;                 company-ispell-dictionary "/usr/share/dict/words")
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -328,7 +329,20 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
    (global-company-mode)
    ;;(define-key global-map (kbd "f5") 'company-ispell)
-   (global-set-key (kbd "<f5>") 'company-ispell)
+   (global-set-key (kbd "<f6>") 'semantic-ia-fast-jump)
+   (global-set-key (kbd "<f5>") 'evil-escape)
+   (global-set-key (kbd "<f7>") 'company-ispell)
+   (dolist (c-c++-hook '(c-mode-hook
+                         c++-mode-hook))
+     (add-hook c-c++-hook
+             (lambda()
+               (add-to-list (make-local-variable 'company-backends)
+                            '(company-c-headers
+                              company-clang
+                              company-semantic
+                              company--capf-cache
+                              ;; company-yasnippet : with
+                              )))))
   )
 
 (custom-set-faces
