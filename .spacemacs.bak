@@ -56,9 +56,9 @@ values."
      semantic
      (auto-completion :variables
                       auto-completion-enable-help-tooltip t
-                      auto-completion-enable-snippets-in-popup t
+                      ;;auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
-     better-defaults
+     ;; better-defaults
      emacs-lisp
      git
      ;; markdown
@@ -326,18 +326,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-   ;; (global-company-mode)
-   (global-linum-mode)
+   (global-company-mode)
    ;;(define-key global-map (kbd "f5") 'company-ispell)
-   ;; (global-set-key (kbd "<f7>") 'evil-escape)
-   (global-set-key (kbd "<f5>") 'semantic-ia-fast-jump)
-   (global-set-key (kbd "<f6>") 'company-ispell)
-   ;; (setq-default evil-escape-delay 0.5)
-   ;; (setq evil-escape-excluded-major-modes '(dired-mode))
-   ;; (setq-default evil-escape-key-sequence "kj")
-   ;; (evil-escape-mode 1)
-
-   ;; (define-key evil-motion-state-map "gd" 'semantic-ia-fast-jump)
+   (global-set-key (kbd "<f8>") 'company-ispell)
+   (global-set-key (kbd "<f5>") 'evil-escape)
+   (global-set-key (kbd "<f6>") 'semantic-ia-fast-jump)
   )
 
 (custom-set-faces
